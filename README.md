@@ -25,9 +25,9 @@ Each API function interacts with a corresponding API endpoint to fetch necessary
 - get_colors(): Fetches the full list of available colors. Returns each color’s name and code.
 Implementation
 
-Here's a high-level view of the logic implementation:
+High-level view of the logic implementation:
 
-User Collection Retrieval: Using get_user_by_id, the user's collection is retrieved, which includes the details of each piece and its count that the user owns.
-Set Pieces Retrieval: Using get_set_by_id, the pieces required for the desired set are retrieved, which includes the details of each piece and its required quantity.
-Collection and Set Comparison: The user's collection is then compared to the set’s required pieces. For each piece required by the set, the system checks whether the user’s collection contains that piece and whether the quantity owned is sufficient.
-Result Determination: If the user's collection contains all the required pieces in sufficient quantities, the system confirms that the user can build the set. Otherwise, the system identifies the missing pieces or those in insufficient quantity.
+- User Collection Retrieval: Using get_user_by_id, the user's collection is retrieved, which includes the details of each piece and its count that the user owns.
+- Set Pieces Retrieval: Using get_set_by_id, the pieces required for the desired set are retrieved, which includes the details of each piece and its required quantity.
+- Collection and Set Comparison: The user's collection is then compared to the set’s required pieces. For each piece required by the set, the system checks whether the user’s collection contains that piece and whether the quantity owned is sufficient.
+- Result Determination: If the user's collection contains all the required pieces in sufficient quantities, the system confirms that the user can build the set. Otherwise, the system identifies the missing pieces or those in insufficient quantity.
