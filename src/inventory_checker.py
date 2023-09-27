@@ -69,7 +69,6 @@ def check_user_inventory(user_name):
 
     available_sets = get_sets()
     colors = get_colors()["colours"]
-    buildable_sets = []
 
     for set in available_sets["Sets"]:
         set_id = set["id"]
@@ -81,4 +80,4 @@ def check_user_inventory(user_name):
             formatted_pieces = format_pieces_for_set(set_pieces, colors)
             save_pieces_to_file(set_name, formatted_pieces)
 
-    return buildable_sets
+    return
