@@ -7,6 +7,7 @@ class collaborationService:
 
     def get_user_inventory(self, username):
         user = self.api_client.get_user_by_username(username)
+
         user_id = self.api_client.get_user_by_id(user["id"])
         user_collection = user_id.get("collection", {})
 
@@ -44,7 +45,7 @@ class collaborationService:
             if design_id not in inventory:
                 inventory[design_id] = {}
 
-            inventory[design_id][material] = quantity
+            inventory[design_id][str(material)] = quantity
 
         return inventory
 
@@ -88,10 +89,10 @@ class collaborationService:
             if user["username"] != user_name
         ]
         helpers = []
+
         for helper_username in users:
             helper_inventory = self.get_user_inventory(helper_username)
             if self.can_complete_set([user_inventory, helper_inventory], set_inventory):
                 helpers.append(helper_username)
 
-        print(helpers)
         return helpers
